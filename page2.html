@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wix Editor</title>
+    <title>Concierge Services</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,52 +13,63 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #1a1a2e;
+            color: #f5f5f5;
         }
         .container {
             text-align: center;
             max-width: 600px;
             width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #2f2f4f;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        input {
+        h1 {
+            font-size: 28px;
+            color: #ffdd00;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: block;
+            padding: 15px 25px;
+            margin: 15px 0;
+            background-color: #003366;
+            color: #ffdd00;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #ffdd00;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ffdd00;
+            color: #003366;
+            transform: scale(1.05);
+        }
+        .iframe-container {
+            margin-top: 30px;
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #ff0000;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
+            height: 400px;
         }
         iframe {
-            margin-top: 20px;
             width: 100%;
-            height: 360px;
+            height: 100%;
             border: none;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-<div class="iframe-container">
-    <div class="iframe-title">Concierge</div>
-    <a href="https://editor.wix.com/html/editor/web/renderer/edit/c8d55cde-ea5a-4175-9da8-601ea884fcee?metaSiteId=b148f432-a8cf-470e-bbb4-a7d83ac631c6">
-        <div style="border: 1px solid #ccc; padding: 20px; text-align: center; border-radius: 10px; background-color: #f9f9f9;">
-            <p style="font-size: 20px; margin: 0;">Open Events Editor</p>
-<a href="https://editor.wix.com/html/editor/web/renderer/edit/9bf68ed6-ed49-47e9-a21e-f261977fcfc3?metaSiteId=1feb5730-fb64-4ce5-9bd6-4467ae9e175d">
-        <div style="border: 1px solid #ccc; padding: 20px; text-align: center; border-radius: 10px; background-color: #f9f9f9;">
-            <p style="font-size: 20px; margin: 0;">Open Essentials Editor</p>
-
-        </div>
-    </a>
+<div class="container">
+    <h1>Concierge Services</h1>
+    <a href="https://editor.wix.com/html/editor/web/renderer/edit/c8d55cde-ea5a-4175-9da8-601ea884fcee?metaSiteId=b148f432-a8cf-470e-bbb4-a7d83ac631c6" class="button">Open Events Editor</a>
+    <a href="https://editor.wix.com/html/editor/web/renderer/edit/9bf68ed6-ed49-47e9-a21e-f261977fcfc3?metaSiteId=1feb5730-fb64-4ce5-9bd6-4467ae9e175d" class="button">Open Essentials Editor</a>
 </div>
-
 </body>
 </html>
+
