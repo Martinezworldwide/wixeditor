@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Iframe Popup</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0f1e;
+      color: #ffffff;
+    }
+
+    /* Button Styling */
+    .open-modal-btn {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #1f2a38;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 15, 30, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Modal Content Styling */
+    .modal-content {
+      width: 80%;
+      max-width: 800px;
+      background-color: #0a0f1e;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      border: 2px solid #0f2740;
+      position: relative;
+    }
+
+    /* Carbon Fiber Pattern */
+    .modal-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+      opacity: 0.3;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    /* Iframe Styling */
+    .modal-iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* Close Button Styling */
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #1f2a38;
+      color: #ffffff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Buttons to Open Modal -->
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/events')">Open Events</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/essentials')">Open Essentials</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/bookstore')">Open Bookstore</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/bestapps')">Open Best Apps</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/fashion')">Open Fashion</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/movies')">Open Movies</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezlifestyle')">Open Martinez Lifestyle</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/music')">Open Music</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/10kfootball')">Open 10k Football</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/engineeredsystems')">Open Engineered Systems</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/reasons')">Open Reasons</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/nutritionconsults')">Open Nutrition Consults</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/solarteamclub')">Open Solar Team Club</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/solarteamguide')">Open Solar Team Guide</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/echatnutrition')">Open eChat Nutrition</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/ulms')">Open ULMS</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/sebastianmartinez')">Open Sebastian Martinez</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/arturoprojects')">Open Arturo Projects</button>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal()">Close</button>
+      <iframe id="modalIframe" class="modal-iframe" src="" title="Embedded Website"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Function to Open Modal and Load Iframe
+    function openModal(url) {
+      document.getElementById("modalIframe").src = url;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    // Function to Close Modal
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+      document.getElementById("modalIframe").src = ""; // Clear iframe to stop video/audio
+    }
+  </script>
+
+</body>
+</html>
