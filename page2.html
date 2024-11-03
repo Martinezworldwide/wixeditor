@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Iframe Popup</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling with Carbon Fiber Background */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0f1e;
+      background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Carbon fiber texture */
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    /* Button Styling */
+    .open-modal-btn {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #1f2a38;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 15, 30, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Modal Content Styling */
+    .modal-content {
+      width: 80%;
+      max-width: 800px;
+      background-color: #0a0f1e;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      border: 2px solid #0f2740;
+      position: relative;
+    }
+
+    /* Iframe Styling */
+    .modal-iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* Close Button Styling */
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #1f2a38;
+      color: #ffffff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Buttons to Open Modal -->
+  <button class="open-modal-btn" onclick="openModal('hhttps://editor.wix.com/html/editor/web/renderer/edit/c8d55cde-ea5a-4175-9da8-601ea884fcee?metaSiteId=b148f432-a8cf-470e-bbb4-a7d83ac631c6')">Open Events</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/essentials')">Open Essentials</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/bookstore')">Open Bookstore</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/bestapps')">Open Best Apps</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/fashion')">Open Fashion</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/movies')">Open Movies</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezlifestyle')">Open Martinez Lifestyle</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/music')">Open Music</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/10kfootball')">Open 10k Football</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/engineeredsystems')">Open Engineered Systems</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/reasons')">Open Reasons</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/nutritionconsults')">Open Nutrition Consults</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/solarteamclub')">Open Solar Team Club</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/solarteamguide')">Open Solar Team Guide</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/echatnutrition')">Open eChat Nutrition</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/ulms')">Open ULMS</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/sebastianmartinez')">Open Sebastian Martinez</button>
+  <button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/arturoprojects')">Open Arturo Projects</button>
+  <!-- New Buttons -->
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/communities')">Open Communities</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/labor')">Open Labor</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/media')">Open Media</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/coupons')">Open Coupons</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/automotive')">Open Automotive</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/theinsider')">Open The Insider</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/causes')">Open Causes</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/sportteams')">Open Sportteams</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/biotechnology')">Open Biotechnology</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/websites')">Open Websites</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/cargo')">Open Cargo</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/retail')">Open Retail</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/tobacco')">Open Tobacco</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/consumerintelligence')">Open Consumer Intelligence</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/mining')">Open Mining</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/inspirational')">Open Inspirational</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/foods')">Open Foods</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/internet')">Open Internet</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/athletes')">Open Athletes</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/nongovernment')">Open Nongovernment</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/restaurants')">Open Restaurants</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/healthcare')">Open Healthcare</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/stemdesigns')">Open Stemdesigns</button>
+  <button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/nonprofit')">Open Nonprofit</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/tier1')">Open Tier1</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/bancs')">Open Bancs</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/arturotechnologies')">Open Arturo Technologies</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezindustrial')">Open Martinez Industrial</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezinvest')">Open Martinez Invest</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/washingtonianfitness')">Open S&F Interface</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/arturoengineering')">Open Arturo Engineering</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezworldwide')">Open Martinez Worldwide</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/solarenergy')">Open Solar Energy</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezeducation')">Open Martinez Education</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/mocopools')">Open Moco Pools</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/baseballupgrades')">Open Baseball Upgrades</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/mallparking')">Open Mall Parking</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/analysis')">Open REASONS AC</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/martinezdata')">Open Martinez Data</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/martinezstocks')">Open Martinez Stocks</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/influenceindex')">Open Influence Index</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/oxygenglobe')">Open Oxygen Globe</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/marylandgamers')">Open Maryland Gamers</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/anthropicdesigns')">Open Anthropic Designs</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/solsticefitness')">Open Solstice Fitness</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/mdadultfootball')">Open MD Adult Football</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/planetwipe')">Open Planet Wipe</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/marylandfootballclub')">Open Maryland Football Club</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/martinezuniversity')">Open Martinez University</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/smashinggoods')">Open Smashing Goods</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/artgallerychat')">Open Art Gallery Chat</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/str1kercoachtv')">Open Str1ker Coach TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/businesstv')">Open Business TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/educationaltv')">Open Educational TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/automotivetv')">Open Automotive TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/essentialstv')">Open Essentials TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/esportstv')">Open Esports TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/livestream')">Open Livestream</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/moviestv')">Open Movies TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/martineztv')">Open Martinez TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/musictv')">Open Music TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/acetoymaker')">Open Ace Toymaker</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/analysistv')">Open Analysis TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/fashiongrouptv')">Open Fashion Group TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/eventstv')">Open Events TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/fashiontv')">Open Fashion TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/techtv')">Open Tech TV</button>
+<button class="open-modal-btn" onclick="openModal('https://engineeredsystems.wixsite.com/sportstv')">Open Sports TV</button>
+<button class="open-modal-btn" onclick="openModal('https://martinezworldwide.wixsite.com/fractalgalaxy')">Open Fractal Galaxy</button>
+
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal()">Close</button>
+      <iframe id="modalIframe" class="modal-iframe" src="" title="Embedded Website"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Function to Open Modal and Load Iframe
+    function openModal(url) {
+      document.getElementById("modalIframe").src = url;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    // Function to Close Modal
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+      document.getElementById("modalIframe").src = ""; // Clear iframe to stop video/audio
+    }
+  </script>
+
+</body>
+</html>
